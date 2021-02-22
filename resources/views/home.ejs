@@ -1,1 +1,61 @@
-<h1>helllskd</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+
+<body>
+    <section class="hero py-6">
+        <div class="container mx-auto flex">
+            <div class="w-1/2">
+                <img src="/img/food.jpeg" alt="" width="100%">
+
+            </div>
+            <div class="w-1/2">
+                <img src="/img/food.jpeg" alt="" width="100%">
+
+            </div>
+        </div>
+    </section>
+    <section class="menu container mx-auto py-4">
+        <h1 class="text-xl font-bold mb-4">All Food</h1>
+        <div class="grid grid-cols-4 col-gap-12 row-gap-16">
+
+
+        <% foods.forEach(function(food) { %>
+            <div class="w-64">
+                <img class="h-40 mb-4 mx-auto" src="<%= food.image %> " alt="">
+                <div class="text-center">
+                    <h2 class="mb-4 text-lg"><%= food.name %></h2>
+                    <span class="size py-1 px-4 rounded-full uppercase text-xs">
+                        desp
+                    </span>
+                    <div class="flex items-center justify-around mt-6">
+                        <span class="font-bold text-lg">$<%= food.price %></span>
+                        <button data-food="<%= JSON.stringify(food) %>" class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
+                            <span>+</span>
+                            <span class="ml-4">Add</span>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        <% }) %>
+
+        </div>
+
+    </section>
+
+    <script src="/js/app.js"></script>
+</body>
+
+</html>
